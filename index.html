@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>The Birth of the Sun</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      background-color: #111;
+      color: #fff;
+      font-family: sans-serif;
+      margin: 0;
+      padding: 2rem;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .stars-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .top-row, .bottom-row {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .bottom-row {
+      margin-left: 0.5px; /* zigzag เยื้องตรงกลาง */
+    }
+
+    .star {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .sunburst {
+      width: 150px;
+      height: 150px;
+    }
+
+    .label {
+      margin-top: 0.5rem;
+      font-size: 14px;
+    }
+
+    .center {
+      transition: all 0.3s ease;
+    }
+
+    .glow.blue { fill: #00f; filter: drop-shadow(0 0 10px rgba(0,0,255,0.8)); }
+    .glow.bluewhite { fill: #66ccff; filter: drop-shadow(0 0 10px rgba(102,204,255,0.8)); }
+    .glow.white { fill: #fff; filter: drop-shadow(0 0 10px rgba(255,255,255,0.8)); }
+    .glow.whiteyellowish { fill: #ffffcc; filter: drop-shadow(0 0 10px rgba(255,255,204,0.8)); }
+    .glow.yellow { fill: #ffeb3b; filter: drop-shadow(0 0 10px rgba(255,235,59,0.8)); }
+    .glow.orange { fill: orange; filter: drop-shadow(0 0 10px rgba(255,165,0,0.8)); }
+    .glow.red { fill: red; filter: drop-shadow(0 0 10px rgba(255,0,0,0.8)); }
+
+    .buttons {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .buttons button {
+      background: #444;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .buttons button:hover {
+      background: #666;
+    }
+
+    .info-box {
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+      background: #ddd;
+      color: #000;
+      padding: 1.5rem;
+      max-width: 400px;
+      border-radius: 8px;
+      font-size: 1.5rem;
+      font-weight: 500;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    @media (max-width: 768px) {
+      .top-row, .bottom-row {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+      }
+
+      .bottom-row {
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>The Birth of the Sun</h1>
+
+  <div class="stars-container">
+    <div class="top-row">
+      <div class="star" id="blue">
+        <svg class="sunburst" viewBox="0 0 120 120">
+          <polygon points="60,0 67,35 100,20 78,50 110,60 78,70 100,100 67,85 60,120 53,85 20,100 42,70 10,60 42,50 20,20 53,35" fill="#ccc"/>
+          <circle class="center" cx="60" cy="60" r="30" fill="#ddd"/>
+        </svg>
+        <div class="label">Blue stars</div>
+      </div>
+      <div class="star" id="bluewhite">
+        <svg class="sunburst" viewBox="0 0 120 120">
+          <polygon points="60,0 67,35 100,20 78,50 110,60 78,70 100,100 67,85 60,120 53,85 20,100 42,70 10,60 42,50 20,20 53,35" fill="#ccc"/>
+          <circle class="center" cx="60" cy="60" r="30" fill="#ddd"/>
+        </svg>
+        <div class="label">Blue-white stars</div>
+      </div>
+      <div class="star" id="white">
+        <svg class="sunburst" viewBox="0 0 120 120">
+          <polygon points="60,0 67,35 100,20 78,50 110,60 78,70 100,100 67,85 60,120 53,85 20,100 42,70 10,60 42,50 20,20 53,35" fill="#ccc"/>
+          <circle class="center" cx="60" cy="60" r="30" fill="#ddd"/>
+        </svg>
+        <div class="label">White stars</div>
+      </div>
+      <div class="star" id="whiteyellowish">
+        <svg class="sunburst" viewBox="0 0 120 120">
+          <polygon points="60,0 67,35 100,20 78,50 110,60 78,70 100,100 67,85 60,120 53,85 20,100 42,70 10,60 42,50 20,20 53,35" fill="#ccc"/>
+          <circle class="center" cx="60" cy="60" r="30" fill="#ddd"/>
+        </svg>
+        <div class="label">White-yellowish stars</div>
+      </div>
+    </div>
+
+    <div class="bottom-row">
+      <div class="star" id="yellow">
+        <svg class="sunburst" viewBox="0 0 120 120">
+          <polygon points="60,0 67,35 100,20 78,50 110,60 78,70 100,100 67,85 60,120 53,85 20,100 42,70 10,60 42,50 20,20 53,35" fill="#ccc"/>
+          <circle class="center" cx="60" cy="60" r="30" fill="#ddd"/>
+        </svg>
+        <div class="label">Yellow stars</div>
+      </div>
+      <div class="star" id="orange">
+        <svg class="sunburst" viewBox="0 0 120 120">
+          <polygon points="60,0 67,35 100,20 78,50 110,60 78,70 100,100 67,85 60,120 53,85 20,100 42,70 10,60 42,50 20,20 53,35" fill="#ccc"/>
+          <circle class="center" cx="60" cy="60" r="30" fill="#ddd"/>
+        </svg>
+        <div class="label">Orange stars</div>
+      </div>
+      <div class="star" id="red">
+        <svg class="sunburst" viewBox="0 0 120 120">
+          <polygon points="60,0 67,35 100,20 78,50 110,60 78,70 100,100 67,85 60,120 53,85 20,100 42,70 10,60 42,50 20,20 53,35" fill="#ccc"/>
+          <circle class="center" cx="60" cy="60" r="30" fill="#ddd"/>
+        </svg>
+        <div class="label">Red stars</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ปุ่ม -->
+  <div class="buttons">
+    <button data-star="blue">1</button>
+    <button data-star="bluewhite">2</button>
+    <button data-star="white">3</button>
+    <button data-star="whiteyellowish">4</button>
+    <button data-star="yellow">5</button>
+    <button data-star="orange">6</button>
+    <button data-star="red">7</button>
+  </div>
+
+  <!-- กล่องคำอธิบาย -->
+  <div class="info-box" id="infoBox">
+    Click the button to see a description of each star type.
+  </div>
+
+  <!-- เสียง -->
+  <audio id="blue-audio" src="audio/blue.mp3"></audio>
+  <audio id="bluewhite-audio" src="audio/bluewhite.mp3"></audio>
+  <audio id="white-audio" src="audio/white.mp3"></audio>
+  <audio id="whiteyellowish-audio" src="audio/whiteyellowish.mp3"></audio>
+  <audio id="yellow-audio" src="audio/yellow.mp3"></audio>
+  <audio id="orange-audio" src="audio/orange.mp3"></audio>
+  <audio id="red-audio" src="audio/red.mp3"></audio>
+
+  <script>
+    const descriptions = {
+      blue: "Type O: Blue stars, temperature over 30,000 K. Hottest stars.",
+      bluewhite: "Type B: Blue-white stars, temperature 10,000–30,000 K.",
+      white: "Type A: White stars, temperature 7,500–10,000 K.",
+      whiteyellowish: "Type F: White-yellowish stars, temperature 6,000–7,500 K.",
+      yellow: "Type G: Yellow stars, 4,900–6,000 K (e.g., the Sun).",
+      orange: "Type K: Orange stars, temperature 3,500–5,000 K.",
+      red: "Type M: Red stars, temperature below 3,500 K. Coolest stars."
+    };
+
+    document.querySelectorAll('.buttons button').forEach(button => {
+      const type = button.dataset.star;
+      const star = document.querySelector(`#${type} .center`);
+      const audio = document.getElementById(`${type}-audio`);
+      const infoBox = document.getElementById("infoBox");
+
+      const play = () => {
+        star.classList.add("glow", type);
+        infoBox.textContent = descriptions[type];
+        audio.currentTime = 0;
+        audio.play();
+      };
+
+      const stop = () => {
+        star.classList.remove("glow", type);
+        audio.pause();
+      };
+
+      button.addEventListener("mousedown", play);
+      button.addEventListener("mouseup", stop);
+      button.addEventListener("mouseleave", stop);
+
+      button.addEventListener("touchstart", play);
+      button.addEventListener("touchend", stop);
+    });
+  </script>
+</body>
+</html>
